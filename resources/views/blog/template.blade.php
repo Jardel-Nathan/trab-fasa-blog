@@ -16,7 +16,7 @@
 <body>
 <div id="navbar" class="navbar-fixed scrollspy">
 <nav class="grey darken-2">
-  <a class="left" style="padding-left: 17px;" href="">Logo</a> 
+  <a class="left" style="padding-left: 17px;" href="">Logo</a>
   <div align="center" style="left:20%" class="nav-wrapper container">
 
 
@@ -25,7 +25,7 @@
 
       <li><a href="{{url('/')}}">Home</a></li>
        <li><a href="{{url('/about')}}">Quem Somos</a></li>
-
+       <li><a href="{{url('/posts')}}">Criar Post</a></li>
       <li><a href="{{url('/contact')}}">Contato</a></li>
         <li><a href="{{env('URL_ADMIN_LOGIN')}}">Administrador</a></li>
 

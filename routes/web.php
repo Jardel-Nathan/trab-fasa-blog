@@ -26,7 +26,7 @@ Route::get('/contact', function (){
    return view('blog.contactUs');
 });
 
-
+Route::get('/posts', 'PostsController@form');
 
 
 
