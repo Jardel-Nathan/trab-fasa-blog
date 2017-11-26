@@ -27,7 +27,7 @@
     <div class="row">
         <div class="col s12 m10 offset-m1 l9 offset-l1">
 
-            <form class="col s12" action="/post" method="post" enctype="multipart/form-data">
+            <form class="col s12" action="/post/create" method="post" enctype="multipart/form-data">
                 <input type="hidden" name="_token" value="{{ csrf_token() }}">
 
                 <div class="row">
