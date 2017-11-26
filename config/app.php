@@ -51,7 +51,7 @@ return [
     |
     */
 
-    'url' => env('APP_URL', 'http://localhost'),
+    'url' => 'https://blog-fasa-6p.herokuapp.com/',
 
     /*
     |--------------------------------------------------------------------------
