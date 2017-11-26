@@ -25,7 +25,7 @@
 
       <li><a href="{{url('/')}}">Home</a></li>
        <li><a href="{{url('/about')}}">Quem Somos</a></li>
-       <li><a href="{{url('/posts')}}">Criar Post</a></li>
+      <!-- <li><a href="{{url('/posts')}}">Criar Post</a></li>-->
       <li><a href="{{url('/contact')}}">Contato</a></li>
         <li><a href="{{env('URL_ADMIN_LOGIN')}}">Administrador</a></li>
 
