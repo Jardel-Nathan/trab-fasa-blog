@@ -19,22 +19,21 @@ class HomeController extends Controller
      */
     public function index()
   {
-
+    if(Auth::check()){
           $post=Posts::orderBy('id', 'DESC')->get();
-
+        }
           return view('home', compact('post'));
 
     }
 
     public function editar(Request $request){
 
-      var_dump(Auth::check());
-    exit;
+    if(Auth::check()){
         $post = Posts::where('id', $request->input('id_post'))->first();
 
         return view('editar', compact('post'));
 
-
+      }
       return redirect(env('URL_ADMIN_LOGIN'));
 
     }
@@ -66,7 +65,9 @@ class HomeController extends Controller
     }
 
     public function tela_criar(){
+      if(Auth::check()){
       return view('criar');
+    }
     }
 
     public function salvar_post(Request $request){
