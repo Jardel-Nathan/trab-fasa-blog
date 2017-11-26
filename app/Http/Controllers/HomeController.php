@@ -7,6 +7,7 @@ use \Illuminate\Support\Facades\Gate;
 use blog\Posts;
 use File;
 use Illuminate\Support\Facades\Input;
+use Illuminate\Support\Facades\Auth;
 use Symfony\Component\HttpFoundation\File\UploadedFile;
 class HomeController extends Controller
 {
@@ -27,7 +28,7 @@ class HomeController extends Controller
 
     public function editar(Request $request){
 
-      var_dump(Gate::allows('access-admin'));
+      var_dump(Auth::check());
     exit;
         $post = Posts::where('id', $request->input('id_post'))->first();
 
