@@ -16,7 +16,7 @@ class UsersTableSeeder extends Seeder
             ->create(
                 [
                     'name'=>'admin',
-                    'email'=>'admin@admin',
+                    'email'=>'admin@admin.com',
                     'password'=>bcrypt('admin')
 
                 ]
@@ -26,7 +26,7 @@ class UsersTableSeeder extends Seeder
             ->create(
                 [
                     'name'=>'Paulo César',
-                    'email'=>'usuario@usuario',
+                    'email'=>'usuario@usuario.com',
                     'password'=>bcrypt('123456')
 
                 ]);
