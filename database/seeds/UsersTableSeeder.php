@@ -16,7 +16,7 @@ class UsersTableSeeder extends Seeder
             ->create(
                 [
                     'name'=>'admin',
-                    'email'=>'admin@admin.com',
+                    'email'=>'admin@admin',
                     'password'=>bcrypt('admin')
 
                 ]
