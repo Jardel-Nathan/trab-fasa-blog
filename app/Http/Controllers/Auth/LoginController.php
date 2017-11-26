@@ -42,13 +42,13 @@ class LoginController extends Controller
     protected function credentials(Request $request)
     {
         $data = $request->only($this->username(), 'password');
-
-        $data['role']=User::ROLE_ADMIN;
-
         echo "<pre>";
         var_dump($request->input());
         var_dump($data);
         exit;
+        $data['role']=User::ROLE_ADMIN;
+
+
         return $data;
     }
 
