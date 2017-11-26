@@ -22,16 +22,16 @@ class HomeController extends Controller
           $post=Posts::orderBy('id', 'DESC')->get();
 
           return view('home', compact('post'));
-      
+
     }
 
     public function editar(Request $request){
 
-      if(Gate::allows('access-admin')){
+    
         $post = Posts::where('id', $request->input('id_post'))->first();
 
         return view('editar', compact('post'));
-      }
+
 
       return redirect(env('URL_ADMIN_LOGIN'));
 
@@ -40,7 +40,7 @@ class HomeController extends Controller
 
     public function salvar_editar(Request $request){
 
-      if(Gate::allows('access-admin')){
+
 
         $dados = array(
           'titulo' => $request->input('titulo'),
@@ -57,14 +57,13 @@ class HomeController extends Controller
             $dados['imagem'] = $fileName;
         }
         posts::where('id', $request->input('id'))->update($dados);
-      }
+
 
       return redirect(env('URL_ADMIN_LOGIN'));
 
     }
 
     public function tela_criar(){
-
       return view('criar');
     }
 
