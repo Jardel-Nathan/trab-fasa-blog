@@ -40,10 +40,11 @@ class LoginController extends Controller
     }
 
     protected function credentials(Request $request)
-    {
+    { var_dump($request->input());
+      exit;
         $data = $request->only($this->username(), 'password');
         $data['role']=User::ROLE_ADMIN;
-        
+
         return $data;
     }
 
