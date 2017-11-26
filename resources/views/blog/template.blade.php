@@ -17,7 +17,7 @@
 <div id="navbar" class="navbar-fixed scrollspy">
 <nav class="grey darken-2">
   <a class="left" style="padding-left: 17px;" href="">
-    <img src="{{asset('blog/images/logo.png')}}" alt="">
+    <img style="width: 15%; position: absolute;" src="{{asset('blog/images/logo.png')}}" alt="">
   </a>
   <div align="center" style="left:20%" class="nav-wrapper container">
 
