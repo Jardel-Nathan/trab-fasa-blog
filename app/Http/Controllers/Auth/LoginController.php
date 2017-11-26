@@ -43,8 +43,6 @@ class LoginController extends Controller
     {
         $data = $request->only($this->username(), 'password');
         $data['role']=User::ROLE_ADMIN;
-        var_dump($data);
-        exit;
         return $data;
     }
 

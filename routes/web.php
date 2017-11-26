@@ -37,7 +37,7 @@ Route::post('/create/comment', 'PostsController@comment');
 Route::get('/home', function (){
    return redirect()->route('admin.home');
 });
-
+Route::get('admin/home', 'HomeController@index')->name('home');
 Auth::routes();
 
 Route::group(
@@ -45,7 +45,7 @@ Route::group(
      'as'=>'admin.'], function(){
 
     Route::group(['middleware'=>'can:access-admin'], function (){
-        Route::get('/home', 'HomeController@index')->name('home');
+
         Route::get('/editar', 'HomeController@editar');
         Route::post( '/salvar-editar', 'HomeController@salvar_editar');
         Route::post('/salvar-criar', 'HomeController@salvar_post');
