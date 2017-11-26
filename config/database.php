@@ -55,11 +55,11 @@ return [
 
         'mysql' => [
             'driver' => 'mysql',
-            'host' => env('DB_HOST', '127.0.0.1'),
+            'host' => env('DB_HOST', 'yhrz9vns005e0734.cbetxkdyhwsb.us-east-1.rds.amazonaws.com	'),
             'port' => env('DB_PORT', '3306'),
             'database' => env('DB_DATABASE', 'blog'),
-            'username' => env('DB_USERNAME', 'root'),
-            'password' => env('DB_PASSWORD', '2606'),
+            'username' => env('DB_USERNAME', 'ved5bp5tio9c4wie'),
+            'password' => env('DB_PASSWORD', 'cfajhbji2wa7rt3k'),
             'charset' => 'utf8',
             'collation' => 'utf8_unicode_ci',
             'prefix' => '',
