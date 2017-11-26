@@ -21,8 +21,10 @@ class HomeController extends Controller
   {
     if(Auth::check()){
           $post=Posts::orderBy('id', 'DESC')->get();
-        }
           return view('home', compact('post'));
+        }
+        return redirect(env('URL_ADMIN_LOGIN'));
+
 
     }
 
