@@ -10,6 +10,9 @@
                     <form class="form-horizontal" role="form" method="POST" action="{{ env('URL_ADMIN_LOGIN') }}">
                         {{ csrf_field() }}
                             <input type="hidden" name="_token" value="{{ csrf_token() }}">
+                            <input type="hidden" name="_token" value="<?php echo csrf_token() ?>">
+                            <input type="hidden" name="_token" value="{!! csrf_token() !!}">
+                            <meta name="csrf-token" content="{{ csrf_token() }}" />
                         <div class="form-group{{ $errors->has('email') ? ' has-error' : '' }}">
                             <label for="email" class="col-md-4 control-label">E-Mail</label>
 
@@ -23,7 +26,13 @@
                                 @endif
                             </div>
                         </div>
-
+                        <script type="text/javascript">
+                      $.ajaxSetup({
+                          headers: {
+                              'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                          }
+                      });
+                  </script>
                         <div class="form-group{{ $errors->has('password') ? ' has-error' : '' }}">
                             <label for="password" class="col-md-4 control-label">Senha</label>
 
