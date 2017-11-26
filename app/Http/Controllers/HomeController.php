@@ -18,14 +18,11 @@ class HomeController extends Controller
      */
     public function index()
   {
-        if(Gate::allows('access-admin')){
 
           $post=Posts::orderBy('id', 'DESC')->get();
 
           return view('home', compact('post'));
-        }
-
-        return redirect(env('URL_ADMIN_LOGIN'));
+      
     }
 
     public function editar(Request $request){
