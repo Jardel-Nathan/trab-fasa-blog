@@ -27,7 +27,8 @@ class HomeController extends Controller
 
     public function editar(Request $request){
 
-    
+      var_dump(Gate::allows('access-admin'));
+    exit;
         $post = Posts::where('id', $request->input('id_post'))->first();
 
         return view('editar', compact('post'));
