@@ -17,13 +17,9 @@ class RedirectIfAuthenticated
      */
     public function handle($request, Closure $next, $guard = null)
     {
-        if (Auth::guard($guard)->check()) {
-          echo "entrou";
-          exit;
-            return redirect('/home');
-        }
-echo 'nao entrou';
-exit;
+
+            return redirect('admin/home');
+
         return $next($request);
     }
 }
