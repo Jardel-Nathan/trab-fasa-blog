@@ -35,7 +35,7 @@ Route::post('/post/create', 'PostsController@create');
 Route::post('/create/comment', 'PostsController@comment');
 
 Route::get('/home', function (){
-   return redirect()->route('admin.home');
+   return redirect()->route('home');
 });
 
 
