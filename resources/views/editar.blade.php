@@ -35,7 +35,7 @@
 
   <div class="form-group col-md-8">
     <label for="exampleFormControlTextarea1">Imagem</label>
-    <img  class="foto-post" src="{{asset('files')}}/{{$post->imagem}}" alt="">
+    <img  class="foto-post" src="https://s3-sa-east-1.amazonaws.com/bucket1jardel/{{$post->imagem}}" alt="">
   </div>
   <div class="form-group col-md-4">
         <label style="background-color: #35962e !important; color:white; margin-top: 50%;" class="btn btn-default" for="upload-file-selector">

@@ -26,15 +26,25 @@ Route::get('/contact', function (){
    return view('blog.contactUs');
 });
 
+Route::get('/posts', 'PostsController@form');
 
+Route::post('/post/create', 'PostsController@create');
 
 
 
 Route::post('/create/comment', 'PostsController@comment');
 
 Route::get('/home', function (){
-   return redirect()->route('admin.home');
+   return redirect()->route('home');
 });
+
+
+Route::get('admin/home', 'HomeController@index')->name('home');
+Route::get('admin/editar', 'HomeController@editar');
+Route::post('admin/salvar-editar', 'HomeController@salvar_editar');
+Route::post('admin/salvar-criar', 'HomeController@salvar_post');
+Route::get('admin/tela-criar', 'HomeController@tela_criar');
+
 
 Auth::routes();
 
@@ -42,6 +52,7 @@ Route::group(
     ['prefix'=>'admin',
      'as'=>'admin.'], function(){
 
+<<<<<<< HEAD
 
         Route::get('/home', 'HomeController@index')->name('home');
         Route::get('/editar', 'HomeController@editar');
@@ -49,5 +60,11 @@ Route::group(
         Route::post('/salvar-criar', 'HomeController@salvar_post');
         Route::get('/tela-criar', 'HomeController@tela_criar');
 
+=======
+    Route::group(['middleware'=>'can:access-admin'], function (){
+
+
+    });
+>>>>>>> feb5a1350fd99d8592c3c1e1c4d547812af6aeaf
 
 });
