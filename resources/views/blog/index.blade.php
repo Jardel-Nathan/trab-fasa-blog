@@ -5,7 +5,9 @@
   <div class="section no-pad-bot">
     <div class="container valign">
       <br><br>
-      <h1 style="color:white" class="header center ">Blog Desenvolvimento Web Fasa 2017</h1>
+      <h1 style="color:white" class="header center ">Blog Desenvolvimento Web Fasa 2017 </h1>
+
+      <h1 style="color:white" class="header center ">Jardel Nathan </h1>
       <div class="row center">
         <h5 class="header col s12 light grey-text text-darken-2"></h5>
       </div>
@@ -29,7 +31,7 @@
     <div class="col-lg-6 col-md-6">
       @foreach($posts as $post)
   <aside>
-     <img src="{{asset('files')}}/{{$post->imagem}}" class="img-responsive">
+     <img src="https://s3-sa-east-1.amazonaws.com/bucket1jardel/{{$post->imagem}}" class="img-responsive">
      <div class="content-title">
 <div class="text-center">
 <h3><a href="{{url('/detail')}}/{{$post->id}}">{{$post->titulo}}</a></h3>

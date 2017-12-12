@@ -18,23 +18,23 @@ class HomeController extends Controller
      */
     public function index()
   {
-        if(Gate::allows('access-admin')){
+
 
           $post=Posts::orderBy('id', 'DESC')->get();
 
           return view('home', compact('post'));
-        }
+
 
         return redirect(env('URL_ADMIN_LOGIN'));
     }
 
     public function editar(Request $request){
 
-      if(Gate::allows('access-admin')){
+
         $post = Posts::where('id', $request->input('id_post'))->first();
 
         return view('editar', compact('post'));
-      }
+
 
       return redirect(env('URL_ADMIN_LOGIN'));
 
@@ -43,7 +43,6 @@ class HomeController extends Controller
 
     public function salvar_editar(Request $request){
 
-      if(Gate::allows('access-admin')){
 
         $dados = array(
           'titulo' => $request->input('titulo'),
@@ -60,7 +59,7 @@ class HomeController extends Controller
             $dados['imagem'] = $fileName;
         }
         posts::where('id', $request->input('id'))->update($dados);
-      }
+
 
       return redirect(env('URL_ADMIN_LOGIN'));
 
@@ -81,10 +80,10 @@ class HomeController extends Controller
       );
 
       if($file = Input::file('imagem')){
-          $destinationPath = public_path().DIRECTORY_SEPARATOR.'files';
-          $fileName =  md5(uniqid(rand(), true));
-          $fileName = $fileName.'.'.$file->extension();
-          $file->move($destinationPath, $fileName);
+        $fileName =   md5(uniqid(rand(), true));
+        $s3 = \Storage::disk('s3');
+        //$filePath = '/arn:aws:s3:::bucket1jardel/' . $fileName;
+        $s3->put($fileName, file_get_contents($file), 'public');
           $dados['imagem'] = $fileName;
       }
 

@@ -42,12 +42,12 @@ Route::group(
     ['prefix'=>'admin',
      'as'=>'admin.'], function(){
 
-    Route::group(['middleware'=>'can:access-admin'], function (){
+
         Route::get('/home', 'HomeController@index')->name('home');
         Route::get('/editar', 'HomeController@editar');
         Route::post( '/salvar-editar', 'HomeController@salvar_editar');
         Route::post('/salvar-criar', 'HomeController@salvar_post');
         Route::get('/tela-criar', 'HomeController@tela_criar');
-    });
+
 
 });
