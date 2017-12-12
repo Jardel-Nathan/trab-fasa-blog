@@ -9,6 +9,7 @@ use File;
 use Illuminate\Support\Facades\Input;
 use Illuminate\Support\Facades\Auth;
 use Symfony\Component\HttpFoundation\File\UploadedFile;
+use Illuminate\Contracts\Filesystem\Filesystem;
 class HomeController extends Controller
 {
 
@@ -19,6 +20,9 @@ class HomeController extends Controller
      */
     public function index()
   {
+
+
+
     if(Auth::check()){
           $post=Posts::orderBy('id', 'DESC')->get();
           return view('home', compact('post'));
@@ -53,11 +57,11 @@ class HomeController extends Controller
         );
 
         if($file = Input::file('imagem')){
-            $destinationPath = public_path().DIRECTORY_SEPARATOR.'files';
-            $fileName =   md5(uniqid(rand(), true));
-            $fileName = $fileName.'.'.$file->extension();
-            $file->move($destinationPath, $fileName);
-            $dados['imagem'] = $fileName;
+          $fileName =   md5(uniqid(rand(), true));
+      $s3 = \Storage::disk('s3');
+      //$filePath = '/arn:aws:s3:::bucket1jardel/' . $fileName;
+      $s3->put($fileName, file_get_contents($file), 'public');
+        $dados['imagem'] = $fileName;
         }
         posts::where('id', $request->input('id'))->update($dados);
 
@@ -82,11 +86,11 @@ class HomeController extends Controller
       );
 
       if($file = Input::file('imagem')){
-          $destinationPath = public_path().DIRECTORY_SEPARATOR.'files';
-          $fileName =  md5(uniqid(rand(), true));
-          $fileName = $fileName.'.'.$file->extension();
-          $file->move($destinationPath, $fileName);
-          $dados['imagem'] = $fileName;
+        $fileName =   md5(uniqid(rand(), true));
+      $s3 = \Storage::disk('s3');
+      //$filePath = '/arn:aws:s3:::bucket1jardel/' . $fileName;
+      $s3->put($fileName, file_get_contents($file), 'public');
+        $dados['imagem'] = $fileName;
       }
 
         Posts::create($dados);

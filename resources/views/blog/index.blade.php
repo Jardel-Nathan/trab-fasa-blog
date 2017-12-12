@@ -29,7 +29,7 @@
     <div class="col-lg-6 col-md-6">
       @foreach($posts as $post)
   <aside>
-     <img src="{{asset('files')}}/{{$post->imagem}}" class="img-responsive">
+     <img src="https://s3-sa-east-1.amazonaws.com/bucket1jardel/{{$post->imagem}}" class="img-responsive">
      <div class="content-title">
 <div class="text-center">
 <h3><a href="{{url('/detail')}}/{{$post->id}}">{{$post->titulo}}</a></h3>

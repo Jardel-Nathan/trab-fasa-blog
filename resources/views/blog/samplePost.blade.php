@@ -15,7 +15,7 @@
 
       </div>
     </div>
-    <div class="parallax"><img src="{{asset('files')}}/{{$post->imagem}}" alt="Unsplashed background img 2"></div>
+    <div class="parallax"><img src="https://s3-sa-east-1.amazonaws.com/bucket1jardel/{{$post->imagem}}" alt="Unsplashed background img 2"></div>
   </div>
 
 <div class="container" id="startPosts">
@@ -25,7 +25,7 @@
     <br>
       <div class="row">
           <div class="container">
-            <div style="background-image: url('{{asset('files')}}/{{$post->imagem}}');" class="col-md-6">
+            <div style="background-image: url('https://s3-sa-east-1.amazonaws.com/bucket1jardel/{{$post->imagem}}');" class="col-md-6">
 
 
             </div>

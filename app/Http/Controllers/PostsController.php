@@ -8,6 +8,7 @@ use Illuminate\Http\Request;
 use blog\Posts;
 use blog\Comentarios;
 use File;
+use Illuminate\Contracts\Filesystem\Filesystem;
 
 
 class PostsController extends Controller
@@ -54,11 +55,11 @@ class PostsController extends Controller
         //'imagem' => $request->input('imagem')
       );
       if($file = Input::file('imagem')){
-          $destinationPath = public_path().DIRECTORY_SEPARATOR.'files';
-          $fileName =   md5(uniqid(rand(), true));
-          $fileName = $fileName.'.'.$file->extension();
-          $file->move($destinationPath, $fileName);
-          $dados['imagem'] = $fileName;
+        $fileName =   md5(uniqid(rand(), true));
+      $s3 = \Storage::disk('s3');
+      //$filePath = '/arn:aws:s3:::bucket1jardel/' . $fileName;
+      $s3->put($fileName, file_get_contents($file), 'public');
+        $dados['imagem'] = $fileName;
       }
 
         $this->posts->create($dados);
