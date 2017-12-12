@@ -55,7 +55,7 @@
             <hr>
 
             <!-- Preview Image -->
-            <img class="img-fluid rounded" src="{{asset('files')}}/{{$post->imagem}}" alt="">
+            <img class="img-fluid rounded" src="https://s3-sa-east-1.amazonaws.com/bucket1jardel/{{$post->imagem}}" alt="">
 
             <hr>
 
