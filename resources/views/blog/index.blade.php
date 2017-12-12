@@ -5,9 +5,7 @@
   <div class="section no-pad-bot">
     <div class="container valign">
       <br><br>
-      <h1 style="color:white" class="header center ">Blog Desenvolvimento Web Fasa 2017 </h1>
-
-      <h1 style="color:white" class="header center ">Jardel Nathan </h1>
+      <h1 style="color:white" class="header center ">Blog Desenvolvimento Web Fasa 2017</h1>
       <div class="row center">
         <h5 class="header col s12 light grey-text text-darken-2"></h5>
       </div>

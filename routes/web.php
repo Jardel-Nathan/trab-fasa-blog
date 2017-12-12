@@ -52,19 +52,9 @@ Route::group(
     ['prefix'=>'admin',
      'as'=>'admin.'], function(){
 
-<<<<<<< HEAD
-
-        Route::get('/home', 'HomeController@index')->name('home');
-        Route::get('/editar', 'HomeController@editar');
-        Route::post( '/salvar-editar', 'HomeController@salvar_editar');
-        Route::post('/salvar-criar', 'HomeController@salvar_post');
-        Route::get('/tela-criar', 'HomeController@tela_criar');
-
-=======
     Route::group(['middleware'=>'can:access-admin'], function (){
 
 
     });
->>>>>>> feb5a1350fd99d8592c3c1e1c4d547812af6aeaf
 
 });

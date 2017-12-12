@@ -9,10 +9,7 @@ use blog\Posts;
 use blog\Comentarios;
 use File;
 use Illuminate\Contracts\Filesystem\Filesystem;
-<<<<<<< HEAD
-=======
 
->>>>>>> feb5a1350fd99d8592c3c1e1c4d547812af6aeaf
 
 class PostsController extends Controller
 {
@@ -53,17 +50,10 @@ class PostsController extends Controller
       );
       if($file = Input::file('imagem')){
         $fileName =   md5(uniqid(rand(), true));
-<<<<<<< HEAD
-        $s3 = \Storage::disk('s3');
-        //$filePath = '/arn:aws:s3:::bucket1jardel/' . $fileName;
-        $s3->put($fileName, file_get_contents($file), 'public');
-          $dados['imagem'] = $fileName;
-=======
       $s3 = \Storage::disk('s3');
       //$filePath = '/arn:aws:s3:::bucket1jardel/' . $fileName;
       $s3->put($fileName, file_get_contents($file), 'public');
         $dados['imagem'] = $fileName;
->>>>>>> feb5a1350fd99d8592c3c1e1c4d547812af6aeaf
       }
 
         $this->posts->create($dados);

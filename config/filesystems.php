@@ -50,16 +50,16 @@ return [
 
         'public' => [
             'driver' => 'local',
-            'root' => storage_path('app\public'),
+            'root' => storage_path('app/public'),
             'visibility' => 'public',
         ],
 
         's3' => [
-            'driver' => 's3',
-            'key' => env('s3_key', 'AKIAJ4R3R563JM23VA5A'),
-            'secret' => env('s3_secret', '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'),
-            'region' => env('s3_region', 'sa-east-1'),
-            'bucket' => env('s3_region', 'bucket1jardel'),
+          'driver' => 's3',
+          'key' => 'AKIAJ4R3R563JM23VA5A',
+          'secret' => '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',
+          'region' => 'sa-east-1',
+          'bucket' => 'bucket1jardel',
         ],
 
     ],

@@ -20,22 +20,13 @@ class HomeController extends Controller
      */
     public function index()
   {
-<<<<<<< HEAD
-
-=======
->>>>>>> feb5a1350fd99d8592c3c1e1c4d547812af6aeaf
 
 
 
     if(Auth::check()){
           $post=Posts::orderBy('id', 'DESC')->get();
           return view('home', compact('post'));
-<<<<<<< HEAD
-
-
-=======
         }
->>>>>>> feb5a1350fd99d8592c3c1e1c4d547812af6aeaf
         return redirect(env('URL_ADMIN_LOGIN'));
 
 
@@ -43,18 +34,10 @@ class HomeController extends Controller
 
     public function editar(Request $request){
 
-<<<<<<< HEAD
-
-        $post = Posts::where('id', $request->input('id_post'))->first();
-
-        return view('editar', compact('post'));
-
-=======
     if(Auth::check()){
         $post = Posts::where('id', $request->input('id_post'))->first();
 
         return view('editar', compact('post'));
->>>>>>> feb5a1350fd99d8592c3c1e1c4d547812af6aeaf
 
       }
       return redirect(env('URL_ADMIN_LOGIN'));
@@ -64,10 +47,7 @@ class HomeController extends Controller
 
     public function salvar_editar(Request $request){
 
-<<<<<<< HEAD
-=======
 
->>>>>>> feb5a1350fd99d8592c3c1e1c4d547812af6aeaf
 
         $dados = array(
           'titulo' => $request->input('titulo'),
@@ -107,17 +87,10 @@ class HomeController extends Controller
 
       if($file = Input::file('imagem')){
         $fileName =   md5(uniqid(rand(), true));
-<<<<<<< HEAD
-        $s3 = \Storage::disk('s3');
-        //$filePath = '/arn:aws:s3:::bucket1jardel/' . $fileName;
-        $s3->put($fileName, file_get_contents($file), 'public');
-          $dados['imagem'] = $fileName;
-=======
       $s3 = \Storage::disk('s3');
       //$filePath = '/arn:aws:s3:::bucket1jardel/' . $fileName;
       $s3->put($fileName, file_get_contents($file), 'public');
         $dados['imagem'] = $fileName;
->>>>>>> feb5a1350fd99d8592c3c1e1c4d547812af6aeaf
       }
 
         Posts::create($dados);
