@@ -25,13 +25,9 @@ class PostsController extends Controller
 
     public function posts(){
 
-
-
         $posts = $this->posts->orderBy('id', 'desc')->paginate(10);
         return view('blog.index',
               compact('posts'));
-
-
     }
 
     public function detail($post_id){
@@ -42,9 +38,7 @@ class PostsController extends Controller
     }
 
     public function form(){
-
         return view('blog.postCreate');
-
     }
 
     public function create(Request $request){
