@@ -55,19 +55,11 @@ return [
         ],
 
         's3' => [
-<<<<<<< HEAD
             'driver' => 's3',
-            'key' => 'AKIAJ4R3R563JM23VA5A',
-            'secret' => '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',
-            'region' => 'sa-east-1',
-            'bucket' => 'bucket1jardel',
-=======
-          'driver' => 's3',
-          'key' => 'AKIAJ4R3R563JM23VA5A',
-          'secret' => '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',
-          'region' => 'sa-east-1',
-          'bucket' => 'bucket1jardel',
->>>>>>> feb5a1350fd99d8592c3c1e1c4d547812af6aeaf
+            'key' => env('s3_key', 'AKIAJ4R3R563JM23VA5A'),
+            'secret' => env('s3_secret', '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'),
+            'region' => env('s3_region', 'sa-east-1'),
+            'bucket' => env('s3_region', 'bucket1jardel'),
         ],
 
     ],
